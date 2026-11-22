@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>Paketiniz · Yönetim</title>
+<title>Ellibeş · Yönetim</title>
 <style>
 :root{--navy:#0B1F3A;--navy2:#16305A;--bg:#F5F7FA;--card:#fff;--tx:#0B1F3A;--bd:#DDE3EC;--mu:#6B7A90;--or:#FF7A1A;--gr:#12B76A;--rd:#D92D20;--bl:#2E6FDB;
 --okbg:#D1FADF;--okfg:#067647;--wabg:#FEF0C7;--wafg:#B54708;--rdbg:#FEE4E2;--rdfg:#B42318}
@@ -95,7 +95,7 @@ async function doLogin(){const g=id=>document.getElementById(id).value.trim();
 async function isAdmin(id){const {data}=await sb.from("profiles").select("role,status").eq("id",id).maybeSingle();return data?.role==="admin"&&data?.status==="active"}
 
 /* ---------- çerçeve ---------- */
-function shell(body){app.innerHTML=`<header><div class="row1"><h1>Paketiniz · Yönetim</h1><button id="out">Çıkış</button></div>
+function shell(body){app.innerHTML=`<header><div class="row1"><h1>Ellibeş · Yönetim</h1><button id="out">Çıkış</button></div>
 <nav>${NAV.map(([k,n])=>`<a href="#${k}" class="${view===k?"on":""}">${n}</a>`).join("")}</nav></header>
 <main>${msg?`<div class="err">${esc(msg)}</div>`:""}${body}</main>`;
  document.getElementById("out").onclick=async()=>{await sb.auth.signOut();loginView()}}
